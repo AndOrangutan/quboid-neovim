@@ -18,4 +18,3 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 
 vim.opt.background = defaults.background
 vim.cmd('colorscheme ' .. defaults.colorscheme)
-vim.notify('idk')
