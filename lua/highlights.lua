@@ -1,10 +1,10 @@
 local defaults = require('defaults')
 
-local highlights = vim.api.nvim_create_augroup('highlights', { clear = true }}
+local highlights = vim.api.nvim_create_augroup('highlights', { clear = true })
 vim.api.nvim_create_autocmd('ColorScheme', {
     pattern = '*',
     group = highlights,
-    callback = function()`
+    callback = function()
         -- Rebind float
         vim.api.nvim_set_hl(0, 'NormalFloat', { link = 'Pmenu' })
 
@@ -18,3 +18,4 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 
 vim.opt.background = defaults.background
 vim.cmd('colorscheme ' .. defaults.colorscheme)
+vim.notify('idk')

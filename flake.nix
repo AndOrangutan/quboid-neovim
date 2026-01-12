@@ -30,12 +30,23 @@
     packages."${system}".default = pkgs.wrapNeovim pkgs.neovim {
       configure = {
         customRC = ''
-          set runtimepath^=${./.}
-          luafile ${./init.lua}
+          lua << EOF
+            local dev_path = os.getenv("NVIM_DEV_PATH")
+            local rtp_path = dev_path or "${./.}"
+            vim.opt.rtp:prepend(rtp_path)
+            dofile(rtp_path .. "/init.lua")
+          EOF
         '';
       };
 
       extraMakeWrapperArgs = "--prefix PATH : ${bind-path}";
+    };
+
+    devShells."${system}".default = pkgs.mkShell {
+      shellHook = ''
+        export NVIM_DEV_PATH=$(pwd)
+        echo "Neovim Dev Mode Enabled: Using $(pwd) for config"
+      '';
     };
   };
 }
