@@ -1,10 +1,9 @@
 # quboid-neovim
 
-idk
+My Config
 
-## TODO
+## TOC
 
-### Plugins
+- [Plugins](docs/Plugins.md)
 
-- https://github.com/horriblename/lzn-auto-require
-- https://github.com/lumen-oss/lz.n
+
