@@ -1,13 +1,12 @@
 vim.pack.add({ "https://github.com/lumen-oss/lz.n" })
 
----@type lz.n.pack.Spec[]
-local plugins = {
-    -- {
-    --     src = "https://github.com/NTBBloodBath/sweetie.nvim",
-    --     data = {
-    --         colorscheme = "sweetie",
-    --     },
-    -- },
-}
+local lz = require("lz.n")
 
-vim.pack.add(plugins, { load = require("lz.n").load })
+--lz.load("plugins")
+---@type lz.n.pack.Spec[]
+local plugin_specs = {}
+--- Add the plugins, replacing the built-in `load` function
+--- with lz.n's implementation.
+vim.pack.add(plugin_specs, { load = lz.load })
+
+require('plugins').require_specs()

@@ -1,0 +1,12 @@
+{
+  "plugins": {
+    "lz.n": {
+      "rev": "b36c73e1a9d1cb2c05b354b390da0d141c9fa09d",
+      "src": "https://github.com/lumen-oss/lz.n"
+    },
+    "onedark.nvim": {
+      "rev": "213c23ae45a04797572242568d5d51937181792d",
+      "src": "https://github.com/navarasu/onedark.nvim"
+    }
+  }
+}

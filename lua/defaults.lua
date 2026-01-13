@@ -32,6 +32,6 @@ _M.border = {
     {" ", "FloatBorder"},
     {" ", "FloatBorder"},
 }
-_M.colorscheme = "default"
+_M.colorscheme = "onedark"
 
 return _M

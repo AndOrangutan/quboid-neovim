@@ -17,4 +17,9 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 })
 
 vim.opt.background = defaults.background
-vim.cmd('colorscheme ' .. defaults.colorscheme)
+
+ok, err = pcall(vim.cmd, 'colorscheme ' .. defaults.colorscheme)
+if not ok then
+    vim.cmd('colorscheme default')
+    vim.notify('Unable to load colorscheme: '..err, vim.log.levels.WARN)
+end
