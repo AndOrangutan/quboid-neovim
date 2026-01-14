@@ -28,7 +28,7 @@ return {
                 require('neogit').setup({
                     integrations = {
                         diffview = true,
-                        -- fzf_lua = true,
+                        fzf_lua = true,
                     },
                     graph_style = 'unicode',
                 })

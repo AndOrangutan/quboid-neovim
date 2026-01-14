@@ -6,6 +6,7 @@ return {
             lazy = true,
             dep_of = {
                 'diffview.nvim',
+                'fzf-lua',
             },
             after = function ()
                 require('mini.icons').setup()

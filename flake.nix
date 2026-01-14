@@ -19,6 +19,7 @@
 
     deps = with pkgs; [
       curl
+      fd
       fzf
       git
       ripgrep
