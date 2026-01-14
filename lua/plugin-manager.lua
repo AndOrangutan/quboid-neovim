@@ -1,6 +1,5 @@
 vim.pack.add({ 'https://github.com/BirdeeHub/lze' }, { confirm = false })
 
-
 ---@type lze.pack.Spec[]
 local plugin_specs = {}
 
@@ -15,14 +14,14 @@ for _, file in ipairs(files) do
     if ok and type(spec) == "table" then
         table.insert(plugin_specs, spec)
     else
-        vim.notify("Failed to load plugin spec: " .. module_name, vim.log.levels.ERROR)
+        vim.notify('Failed to load plugin spec: ' .. module_name.. '\nError: '..spec, vim.log.levels.ERROR)
     end
 end
 
 vim.pack.add(plugin_specs, {
     load = function(p)
-        local spec = p.spec.data or {}
-        spec.name = p.spec.name
+        local spec = p.spec
+        spec[1] = p.spec.name
         require('lze').load(spec)
     end,
     confirm = true,
