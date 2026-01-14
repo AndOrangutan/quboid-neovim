@@ -4,6 +4,10 @@
       "rev": "ab1c3202c62fc19a33ede14a8b6fc66e772b91d7",
       "src": "https://github.com/BirdeeHub/lze"
     },
+    "neogit": {
+      "rev": "d8bf9102692250193b855acd9025a826f1af2729",
+      "src": "https://github.com/NeogitOrg/neogit"
+    },
     "onedark.nvim": {
       "rev": "213c23ae45a04797572242568d5d51937181792d",
       "src": "https://github.com/navarasu/onedark.nvim"

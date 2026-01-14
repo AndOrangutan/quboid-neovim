@@ -20,8 +20,8 @@ end
 
 vim.pack.add(plugin_specs, {
     load = function(p)
-        local spec = p.spec
-        spec[1] = p.spec.name
+        local spec = p.spec.data or {}
+        spec.name = p.spec.name
         require('lze').load(spec)
     end,
     confirm = true,

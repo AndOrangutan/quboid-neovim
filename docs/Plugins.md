@@ -18,7 +18,7 @@ vim.pack
 
 ### Git
 
-<!-- - [neogit](https://github.com/NeogitOrg/neogit) - An interactive and powerful Git interface for Neovim, inspired by Magit. -->
+- [neogit](https://github.com/NeogitOrg/neogit) - An interactive and powerful Git interface for Neovim, inspired by Magit.
 
 ## TODO
 
