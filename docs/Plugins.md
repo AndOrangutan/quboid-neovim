@@ -26,6 +26,9 @@ vim.pack
 
 - [fzf-lua](https://github.com/ibhagwan/fzf-lua) - Improved fzf.vim written in lua.
 
+### Util
+
+- [vim-startuptime](https://github.com/dstein64/vim-startuptime) - A plugin for viewing Vim and Neovim startup event timing information.
 
 ## TODO
 
