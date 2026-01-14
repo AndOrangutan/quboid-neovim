@@ -10,7 +10,7 @@ vim.pack
 
 ### Deps
 
-<!-- - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) - Plenary: full; complete; entire; absolute; unqualified. All the lua functions I don't want to write twice. -->
+- [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) - Plenary: full; complete; entire; absolute; unqualified. All the lua functions I don't want to write twice.
 
 ### Colorschemes
 
