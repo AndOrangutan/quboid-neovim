@@ -11,7 +11,7 @@ for _, file in ipairs(files) do
     local module_name = file:match("lua/(plugins/.*)%.lua$"):gsub("/", ".")
 
     local ok, result = pcall(require, module_name)
-    if ok and type(result) == "table" then
+    if ok and type(result) == 'table' then
         if result[1] ~= nil then
             for _, spec in ipairs(result) do
                 table.insert(plugin_specs, spec)
@@ -19,7 +19,7 @@ for _, file in ipairs(files) do
         else
             table.insert(plugin_specs, result)
         end
-    else
+    elseif type(result) == 'string' then
         vim.notify('Failed to load plugin spec: ' .. module_name.. '\nError: '..result, vim.log.levels.ERROR)
     end
 end
