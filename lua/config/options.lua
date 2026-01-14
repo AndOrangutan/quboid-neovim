@@ -1,6 +1,7 @@
 -- Make sure to setup `mapleader` and `maplocalleader` before loading lazy.nvim so that mappings are correct.
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+vim.g.mapleader = " "
 
 -- Line numbers
 vim.opt.number = true        -- Enable line numbers
@@ -34,9 +35,8 @@ vim.opt.backup = false        -- Disable backup
 
 -- Performance
 vim.opt.updatetime = 300      -- Faster completion
--- vim.opt.timeoutlen = 500      -- Time to wait for a mapped sequence to complete
 vim.opt.timeout = true
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 300      -- Time to wait for a mapped sequence to complete
 
 -- Split windows
 vim.opt.splitbelow = true     -- Split below by default

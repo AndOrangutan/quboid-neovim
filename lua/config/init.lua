@@ -6,9 +6,10 @@ _M.init = function()
     if did_init then
         return
     else
-        require('config.autocmds')
-        require('config.keybinds')
+        -- Ranked by priority
         require('config.options')
+        require('config.keybinds')
+        require('config.autocmds')
     end
 
     _M.did_init = true

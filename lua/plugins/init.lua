@@ -13,7 +13,10 @@ _M.current_modes = modes
 -- Ordered list of modes
 ---@type table<lua_module, Mode[]>
 _M.spec_modes = {
+    [ "plugins.deps" ] = modes,
+
     [ "plugins.colorschemes" ] = modes,
+    [ "plugins.git" ] = modes,
 }
 
 --@return lua_module[]

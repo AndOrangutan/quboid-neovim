@@ -6,4 +6,6 @@ My Config
 
 - [Plugins](docs/Plugins.md)
 
+## TODO
 
+- Rebind grep to rg
