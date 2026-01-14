@@ -6,7 +6,7 @@ return {
             'onedark',
         },
         after = function()
-            require('onedark').config({
+            require('onedark').setup({
                 code_style = {
                     comments = 'italic',
                     keywords = 'italic,bold',
