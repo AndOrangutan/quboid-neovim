@@ -10,11 +10,17 @@ for _, file in ipairs(files) do
     -- Convert file path to a Lua module name (e.g., "plugins.telescope")
     local module_name = file:match("lua/(plugins/.*)%.lua$"):gsub("/", ".")
 
-    local ok, spec = pcall(require, module_name)
-    if ok and type(spec) == "table" then
-        table.insert(plugin_specs, spec)
+    local ok, result = pcall(require, module_name)
+    if ok and type(result) == "table" then
+        if result[1] ~= nil then
+            for _, spec in ipairs(result) do
+                table.insert(plugin_specs, spec)
+            end
+        else
+            table.insert(plugin_specs, result)
+        end
     else
-        vim.notify('Failed to load plugin spec: ' .. module_name.. '\nError: '..spec, vim.log.levels.ERROR)
+        vim.notify('Failed to load plugin spec: ' .. module_name.. '\nError: '..result, vim.log.levels.ERROR)
     end
 end
 
