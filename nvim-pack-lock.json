@@ -4,6 +4,10 @@
       "rev": "b36c73e1a9d1cb2c05b354b390da0d141c9fa09d",
       "src": "https://github.com/lumen-oss/lz.n"
     },
+    "lze": {
+      "rev": "ab1c3202c62fc19a33ede14a8b6fc66e772b91d7",
+      "src": "https://github.com/BirdeeHub/lze"
+    },
     "neogit": {
       "rev": "d8bf9102692250193b855acd9025a826f1af2729",
       "src": "https://github.com/NeogitOrg/neogit"
