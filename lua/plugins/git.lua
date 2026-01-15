@@ -1,3 +1,9 @@
+local sup = require('supporter')
+
+sup.insert('ft-exclude', {
+    { 'neogit', { 'NeogitCommitMessage', 'NeogitDiffView', 'NeogitStatus' } }
+})
+
 return {
     {
         src = 'https://github.com/sindrets/diffview.nvim',
