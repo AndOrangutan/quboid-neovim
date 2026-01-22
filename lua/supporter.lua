@@ -19,16 +19,16 @@ local _header = {
 -- })
 
 _M.init = function(tbls)
-    if not type(tbls) == 'table' then
+    if type(tbls) ~= 'table' then
         -- TODO: add
         vim.notify('Supporter improper data format in tbls')
         return
     end
 
     for _, tbl in ipairs(tbls) do
-        if type(tbl) == 'list' then
+        if type(tbl) ~= 'list' and type(tbl) ~= 'table' then
             -- TODO: add
-            vim.notify('Supporter improper data format in tbl')
+            vim.notify('Supporter improper data format in tbl: '.. vim.inspect(tbl))
             return
         end
         local name = tbl[1]
@@ -36,21 +36,21 @@ _M.init = function(tbls)
         local by = tbl[3]
         local desc_tbl = tbl[4]
 
-        if not type(name) == 'string' then
+        if type(name) ~= 'string' then
             -- TODO: add
             vim.notify('Supporter improper data format in name')
             return
-        elseif not type(title) == 'string' then
+        elseif type(title) ~= 'string' then
             -- TODO: add
             vim.notify('Supporter improper data format in title')
             return
-        elseif not type(by) == 'list' then
+        elseif type(by) ~= 'list' and type(by) ~= 'table' then
             -- TODO: add
-            vim.notify('Supporter improper data format in by')
+            vim.notify('Supporter improper dat{} at in by')
             return
-        elseif not type(desc_tbl) == 'list' then
+        elseif type(desc_tbl) ~= 'list' and type(desc_tbl) ~= 'table' then
             -- TODO: add
-            vim.notify('Supporter improper data format in desc_tbl')
+            vim.notify('Supporter improper data format in desc_tbl: ' .. type(desc_tbl))
             return
         end
 
@@ -64,35 +64,105 @@ end
 --     { index, by }
 -- })
 _M.insert = function (name, indicies_by)
-    if not type(name) == 'string' then
+    if type(name) ~= 'string' then
         -- TODO: add
         vim.notify('Supporter improper insert format in name')
         return
-    elseif not type(indicies_by) == 'list' then
+    elseif type(indicies_by) ~= 'list' and type(indicies_by) ~= 'table' then
         -- TODO: add
-        vim.notify('Supporter improper insert format in indicies_by')
+        vim.notify('Supporter improper insert format in indicies_by: ' .. name)
+        return
+    end
+
+    if _support_tbl[name] == nil then
+        -- TODO: add
+        vim.notify('Supporter improper insert Table uninitialized: ' .. name)
+        return
     end
 
 
     for _, index_by in ipairs(indicies_by) do
-        if not type(index_by[1]) == 'string' then
+        if type(index_by[1]) ~= 'string' then
             -- TODO: add
             vim.notify('Supporter improper insert format in index_by[1]')
             return
-        elseif not type(index_by[2]) == 'list' then
+        elseif type(index_by[2]) ~= 'list' and type(index_by[2]) ~= 'table' then
             -- TODO: add
-            vim.notify('Supporter improper insert format in index_by[2]')
+            vim.notify('Supporter improper insert format in index_by[2]: ' .. type(index_by[2]))
             return
         end
 
-        if not _support_tbl[name] == nil then
-            -- TODO: add
-            vim.notify('Supporter improper insert Table uninitialized')
-            return
-        end
         table.insert(_support_tbl[name], index_by)
     end
 end
+
+
+_M.is = function (name)
+    if type(name) ~= 'string' then
+        -- TODO: add
+        vim.notify('Supporter.in improper by format in name')
+        return
+    end
+
+    if _support_tbl[name] == nil then
+        -- TODO: add
+        vim.notify('Supporter.in improper by Table uninitialized')
+        return
+    end
+
+
+    local out_list = {}
+    for i, by_tbl in ipairs(_support_tbl[name]) do
+        if i ~= 1 then
+            table.insert(out_list, by_tbl[1])
+        end
+    end
+    return out_list
+end
+
+_M.by = function (name)
+    if type(name) ~= 'string' then
+        -- TODO: add
+        vim.notify('Supporter improper by format in name')
+        return
+    end
+
+    if _support_tbl[name] == nil then
+        -- TODO: add
+        vim.notify('Supporter improper by Table uninitialized')
+        return
+    end
+
+    local unique_list = {}
+
+    -- local unique_list = {
+    --     ['test1'] = true,
+    --     ['test2'] = true,
+    -- }
+
+    for i, by_tbl in ipairs(_support_tbl[name]) do
+        if i ~= 1 then
+            if type(by_tbl) ~= 'list' and type(by_tbl) ~= 'table' then
+                vim.notify('Failed to validate by_tbl ' .. type(by_tbl) .. ': ' .. vim.inspect(by_tbl))
+                return
+            end
+            if type(by_tbl[2]) ~= 'list' and type(by_tbl[2]) ~= 'table' then
+                vim.notify('Failed to validate by_tbl[2] ' .. type(by_tbl[2]) .. ': ' .. vim.inspect(by_tbl[2]))
+                return
+            end
+            for _, index in ipairs(by_tbl[2]) do
+                unique_list[index] = true
+            end
+        end
+    end
+
+    local out_list = {}
+    for name, bool in pairs(unique_list) do
+        table.insert(out_list, name)
+    end
+    return out_list
+end
+
 
 _M.gen = function ()
     local config_path = vim.fn.stdpath('config')..'/docs'
@@ -109,6 +179,7 @@ _M.gen = function ()
     end
     file:close()
 end
+
 
 _M.return_table = function ()
     return _support_tbl
