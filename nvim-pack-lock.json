@@ -8,6 +8,10 @@
       "rev": "578a11f9f7c5f4436b833731ccceeda9479562f0",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
+    "gitsigns.nvim": {
+      "rev": "42d6aed4e94e0f0bbced16bbdcc42f57673bd75e",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
     "lze": {
       "rev": "ab1c3202c62fc19a33ede14a8b6fc66e772b91d7",
       "src": "https://github.com/BirdeeHub/lze"
@@ -19,6 +23,10 @@
     "neogit": {
       "rev": "d8bf9102692250193b855acd9025a826f1af2729",
       "src": "https://github.com/NeogitOrg/neogit"
+    },
+    "nvim-lspconfig": {
+      "rev": "419b082102fa813739588dd82e19a8b6b2442855",
+      "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "onedark.nvim": {
       "rev": "213c23ae45a04797572242568d5d51937181792d",

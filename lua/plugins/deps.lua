@@ -7,6 +7,7 @@ return {
             dep_of = {
                 'diffview.nvim',
                 'fzf-lua',
+                'lspconfig',
             },
             after = function ()
                 require('mini.icons').setup()

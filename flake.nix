@@ -25,7 +25,11 @@
       ripgrep
     ];
 
-    full-deps = deps;
+    lsp = with pkgs; [
+      lua-language-server
+    ];
+
+    full-deps = deps++lsp;
     bind-path = pkgs.lib.makeBinPath full-deps;
   in {
     packages."${system}".default = pkgs.wrapNeovim pkgs.neovim {

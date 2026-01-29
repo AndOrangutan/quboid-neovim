@@ -4,19 +4,6 @@ local _M = {}
 -- Exclusions --
 ----------------
 
-_M.ft_exclude = {
-    '', -- disable for empty buffer
-    'fugitive',
-    'NeogitCommitMessage',
-    'NeogitDiffView',
-    'NeogitStatus',
-}
-
-_M.bt_exclude = {
-    'nofile',
-    'quickfix',
-    'prompt',
-}
 
 ---------
 -- GUI --
@@ -34,4 +21,17 @@ _M.border = {
 }
 _M.colorscheme = "onedark"
 
+_M.ft_support = {
+    'lock',
+    'lua',
+    'markdown',
+    'nix',
+}
+
+-- TODO: move to supporter
+_M.bt_exclude = {
+    'nofile',
+    'quickfix',
+    'prompt',
+}
 return _M

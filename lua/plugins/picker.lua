@@ -26,7 +26,9 @@ return {
                         preview = {
                             border = require('defaults').border,
                         },
-                    }
+                    },
+                    -- previewers = {
+                    -- },
                 })
             end,
             keys = {
