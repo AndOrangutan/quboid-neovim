@@ -54,8 +54,15 @@ vim.opt.listchars:append({
     --lead  = spc_char,
     trail = spc_char,
     --nbsp  = spc_char
-
 })
+
+vim.opt.foldlevel = 100
+vim.opt.fillchars = {
+    fold = ' ',
+    foldopen = '',
+    foldsep = ' ',
+    foldclose = ''
+}
 
 vim.opt.cursorline = true
 

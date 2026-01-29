@@ -30,8 +30,5 @@ _M.ft_support = {
 
 -- TODO: move to supporter
 _M.bt_exclude = {
-    'nofile',
-    'quickfix',
-    'prompt',
 }
 return _M
