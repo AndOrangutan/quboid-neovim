@@ -73,4 +73,43 @@ return {
             },
         },
     },
+    {
+        src = 'https://github.com/rachartier/tiny-inline-diagnostic.nvim',
+        ---@type lze.pack.Spec[]
+        data = {
+            event = { 'LspAttach' },
+            lazy = true,
+            after = function()
+                vim.diagnostic.open_float = require('tiny-inline-diagnostic.override').open_float
+                local icons = require('icons')
+                require('tiny-inline-diagnostic').setup({
+                    -- preset = 'classic',
+                    signs = {
+                        left = '',
+                        right = '',
+                        -- diag = '●',
+                        arrow = '    ',
+                        up_arrow = '    ',
+                        vertical = ' '..icons.ui.bar_thick..' ',
+                        vertical_end = ' '..icons.ui.bar_thick_elbow..' ',
+                    },
+                    blend = {
+                        factor = 0.22,
+                    },
+                    hl = {
+                        background = 'NormalFloat',
+                    },
+                    options = {
+                        use_icons_from_diagnostic = true,
+                        multilines = {
+                            enabled = false,
+                        },
+                        show_source = {
+                            enabled = true,
+                        },
+                    },
+                })
+            end,
+        },
+    },
 }

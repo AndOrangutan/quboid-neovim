@@ -40,6 +40,10 @@
       "rev": "c46172d0911aa5d49ba5f39f4351d1bb7aa289cc",
       "src": "https://github.com/luukvbaal/statuscol.nvim"
     },
+    "tiny-inline-diagnostic.nvim": {
+      "rev": "ecce93ff7db4461e942c03e0fcc64bd785df4057",
+      "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
+    },
     "vim-startuptime": {
       "rev": "b6f0d93f6b8cf6eee0b4c94450198ba2d6a05ff6",
       "src": "https://github.com/dstein64/vim-startuptime"
