@@ -62,10 +62,19 @@ _M.setup_on_attach = function ()
 end
 
 
--- Generate capabilitites
+-- Generate capabilities
 _M.get_capabilities = function ()
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities.offsetEncoding = { 'utf-16' }
+    local blink_ok, blink = pacll(require, 'blink.cmp')
+    local capabilities = {}
+    local def_capabilities = {
+        offsetEncoding = { 'utf-16' }
+    }
+    if blink_ok then
+        capabilities = require('blink.cmp').get_lsp_capabilities(def_capabilities)
+    else
+        capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities = vim.tbl_deep_extend('force', capabilities, def_capabilities)
+    end
     -- capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
     return capabilities
 end

@@ -12,6 +12,11 @@ vim.pack
 
 - [onedark.nvim](https://github.com/navarasu/onedark.nvim) - One dark and light colorscheme for neovim >= 0.5.0 written in lua based on Atom's One Dark and Light theme.
 
+### Completion
+
+- [blink.cmp](https://github.com/saghen/blink.cmp) - Performant,
+  batteries-included completion plugin for Neovim.
+
 ### Deps
 
 - [mini.icons](https://github.com/nvim-mini/mini.icons) - Icon provider. Part of 'mini.nvim' library.

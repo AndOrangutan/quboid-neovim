@@ -5,6 +5,7 @@ return {
         data = {
             lazy = true,
             dep_of = {
+                'blink.cmp',
                 'diffview.nvim',
                 'fzf-lua',
                 'lspconfig',

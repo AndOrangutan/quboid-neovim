@@ -67,3 +67,5 @@ vim.opt.fillchars = {
 vim.opt.cursorline = true
 
 vim.opt.conceallevel = 2
+
+vim.opt.winborder = 'solid'
