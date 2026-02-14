@@ -1,3 +1,22 @@
+local sup = require('supporter')
+
+-- https://github.com/xzbdmw/colorful-menu.nvim
+sup.insert('ft-plugin', {
+    { 'colorful-menu', {
+        'c',
+        'cpp',
+        'csharp',
+        'dart',
+        'go',
+        'lua',
+        'php',
+        'python',
+        'rust',
+        'typescirpt',
+        'zig',
+    } }
+})
+
 return {
     {
         src = 'https://github.com/saghen/blink.cmp',
@@ -53,7 +72,32 @@ return {
                         menu = {
                             border = 'none',
                             draw = {
+                                columns = { { 'kind_icon' }, { 'label', gap = 1 } },
                                 components = {
+                                    label = {
+                                        width = { fill = true, max = 60 },
+                                        text = function(ctx)
+                                            local highlights_info = require('colorful-menu').blink_highlights(ctx)
+                                            if highlights_info ~= nil then
+                                                -- Or you want to add more item to label
+                                                return highlights_info.label
+                                            else
+                                                return ctx.label
+                                            end
+                                        end,
+                                        highlight = function(ctx)
+                                            local highlights = {}
+                                            local highlights_info = require('colorful-menu').blink_highlights(ctx)
+                                            if highlights_info ~= nil then
+                                                highlights = highlights_info.highlights
+                                            end
+                                            for _, idx in ipairs(ctx.label_matched_indices) do
+                                                table.insert(highlights, { idx, idx + 1, group = 'BlinkCmpLabelMatch' })
+                                            end
+                                            -- Do something else
+                                            return highlights
+                                        end,
+                                    },
                                     kind_icon = {
                                         text = function(ctx)
                                             local kind_icon, _, _ = require('mini.icons').get('lsp', ctx.kind)
@@ -111,4 +155,18 @@ return {
         end,
     },
 },
+{
+    src = 'https://github.com/xzbdmw/colorful-menu.nvim',
+    ---@type lze.pack.Spec[]
+    data = {
+        dep_of = {
+            'blink.cmp'
+        },
+        lazy = true,
+        after = function ()
+            require("colorful-menu").setup()
+        end
+    },
+},
+
 }

@@ -14,8 +14,8 @@ vim.pack
 
 ### Completion
 
-- [blink.cmp](https://github.com/saghen/blink.cmp) - Performant,
-  batteries-included completion plugin for Neovim.
+- [blink.cmp](https://github.com/saghen/blink.cmp) - Performant, batteries-included completion plugin for Neovim.
+- [colorful-menu.nvim](https://github.com/xzbdmw/colorful-menu.nvim) - Bring enjoyment to your auto completion.
 
 ### Deps
 
