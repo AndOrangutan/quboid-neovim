@@ -18,6 +18,7 @@
     };
 
     deps = with pkgs; [
+      cargo
       curl
       fd
       fzf

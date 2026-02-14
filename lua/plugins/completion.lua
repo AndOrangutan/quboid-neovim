@@ -1,12 +1,33 @@
 return {
     {
         src = 'https://github.com/saghen/blink.cmp',
+        -- version = vim.version.range('1.*'),
+        name = 'blink.cmp',
         ---@type lze.pack.Spec[]
         data = {
-            event = { 'LspAttach' },
+            event = {'BufReadPost', 'BufNewFile', 'BufWritePre'},
             dep_of = { 'lspconfig' },
-            tag = '1.*',
             lazy = true,
+            run = function (data)
+                vim.schedule(function()
+                    vim.notify('Building blink.cmp...', vim.log.levels.INFO)
+                end)
+
+                -- Use the Nix command which is safer on NixOS
+                -- 'data.path' is provided by the PackChanged event
+                local obj = vim.system({ 'nix', 'run', '.#build-plugin' }, { cwd = data.path }):wait()
+                -- local obj = vim.system({'cargo build --release' }, { cwd = data.path }):wait()
+
+
+                vim.schedule(function()
+                    if obj.code == 0 then
+                        vim.notify('Blink.cmp built successfully!', vim.log.levels.INFO)
+                    else
+                        vim.notify('Blink.cmp build failed!', vim.log.levels.ERROR)
+                        print(obj.stderr) -- Check :messages for errors
+                    end
+                end)
+            end,
             after = function()
                 require('blink.cmp').setup({
                     --
@@ -20,8 +41,17 @@ return {
                     },
 
                     completion = {
-                        documentation = { auto_show = true },
+                        list = {
+                            selection = { preselect = true, auto_insert = true },
+                        },
+                        documentation = {
+                            auto_show = true,
+                            window = {
+                                border = 'shadow',
+                            },
+                        },
                         menu = {
+                            border = 'none',
                             draw = {
                                 components = {
                                     kind_icon = {

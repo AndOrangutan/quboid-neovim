@@ -4,10 +4,10 @@ local sup = require('supporter')
 require('config').init()
 
 sup.init({
-    { 'ft-lsp', 'LSP x Filetype', def.ft_support, {} },
-    { 'ft-plugin', 'Plugins x Filetype', def.ft_support, {} },
-    { 'ft-exclude', 'Exclude x Filetype', {}, {} },
-    { 'bt-exclude', 'Exclude x Buffertype', {}, {} },
+    { 'ft-lsp',     'LSP x Filetype',       def.ft_support, {} },
+    { 'ft-plugin',  'Plugins x Filetype',   def.ft_support, {} },
+    { 'ft-exclude', 'Exclude x Filetype',   {},             {} },
+    { 'bt-exclude', 'Exclude x Buffertype', {},             {} },
 })
 
 sup.insert('ft-exclude', {
