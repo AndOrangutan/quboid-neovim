@@ -3,6 +3,9 @@ return {
         src = 'https://github.com/ibhagwan/fzf-lua',
         ---@type lze.pack.Spec[]
         data = {
+            dep_of = {
+                'obsidian.nvim',
+            },
             after = function()
                 ---@module "fzf-lua"
                 ---@type fzf-lua.Config|{}

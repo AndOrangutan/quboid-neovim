@@ -36,6 +36,11 @@
       "rev": "419b082102fa813739588dd82e19a8b6b2442855",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
+    "obsidian.nvim": {
+      "rev": "1705e203716269e709ef7645196636d09fe58ed9",
+      "src": "https://github.com/obsidian-nvim/obsidian.nvim",
+      "version": "'*'"
+    },
     "onedark.nvim": {
       "rev": "213c23ae45a04797572242568d5d51937181792d",
       "src": "https://github.com/navarasu/onedark.nvim"

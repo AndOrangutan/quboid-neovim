@@ -17,6 +17,7 @@ sup.insert('ft-plugin', {
     } }
 })
 
+-- https://cmp.saghen.dev/configuration/sources#community-sources
 return {
     {
         src = 'https://github.com/saghen/blink.cmp',
@@ -25,7 +26,10 @@ return {
         ---@type lze.pack.Spec[]
         data = {
             event = {'BufReadPost', 'BufNewFile', 'BufWritePre'},
-            dep_of = { 'lspconfig' },
+            dep_of = {
+                'lspconfig',
+                'obsidian.nvim',
+            },
             lazy = true,
             run = function (data)
                 vim.schedule(function()
@@ -51,7 +55,7 @@ return {
                 require('blink.cmp').setup({
                     --
                     -- See :h blink-cmp-config-keymap for defining your own keymap
-                    keymap = { preset = 'default' },
+                    keymap = { preset = 'enter' },
 
                     appearance = {
                         -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -72,7 +76,7 @@ return {
                         menu = {
                             border = 'none',
                             draw = {
-                                columns = { { 'kind_icon' }, { 'label', gap = 1 } },
+                                columns = { { 'kind_icon' }, { 'label', 'label_description', gap = 1 }, { 'source_name', gap = 1 } },
                                 components = {
                                     label = {
                                         width = { fill = true, max = 60 },

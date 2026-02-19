@@ -9,6 +9,7 @@ return {
                 'diffview.nvim',
                 'fzf-lua',
                 'lspconfig',
+                'obsidian.nvim',
             },
             after = function ()
                 require('mini.icons').setup()
