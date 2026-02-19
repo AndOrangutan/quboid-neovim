@@ -2,6 +2,7 @@ local sup = require('supporter')
 
 sup.insert('ft-lsp', {
     { 'lua-language-server', { 'lua' } },
+    { 'nil', { 'nix' } },
 })
 
 return {

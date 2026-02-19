@@ -67,7 +67,8 @@ _M.get_capabilities = function ()
     local blink_ok, blink = pacll(require, 'blink.cmp')
     local capabilities = {}
     local def_capabilities = {
-        offsetEncoding = { 'utf-16' }
+        offsetEncoding = { 'utf-16' },
+        workspace = { didChangeWatchedFiles = { dynamicRegistration = true } },
     }
     if blink_ok then
         capabilities = require('blink.cmp').get_lsp_capabilities(def_capabilities)
@@ -75,6 +76,8 @@ _M.get_capabilities = function ()
         capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = vim.tbl_deep_extend('force', capabilities, def_capabilities)
     end
+
+
     -- capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
     return capabilities
 end

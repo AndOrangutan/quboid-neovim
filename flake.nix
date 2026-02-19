@@ -28,6 +28,7 @@
 
     lsp = with pkgs; [
       lua-language-server
+      nil
     ];
 
     full-deps = deps++lsp;
