@@ -39,7 +39,6 @@ vim.pack
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Quickstart configs for Nvim LSP.
 - [tiny-inline-diagnostic.nvim](https://github.com/rachartier/tiny-inline-diagnostic.nvim) - A Neovim plugin for displaying inline diagnostic messages with customizable styles and icons.
 
-
 ### Picker
 
 - [fzf-lua](https://github.com/ibhagwan/fzf-lua) - Improved fzf.vim written in lua.
@@ -48,6 +47,7 @@ vim.pack
 
 #### Core
 
+- [mini.files](https://github.com/nvim-mini/mini.files) - Navigate and manipulate file system. Part of 'mini.nvim' library.
 - [statuscol.nvim](https://github.com/luukvbaal/statuscol.nvim) - Status column plugin that provides a configurable 'statuscolumn' and click handlers.
 
 ### Util
@@ -59,3 +59,5 @@ vim.pack
 - https://github.com/obsidian-nvim/obsidian.nvim
 - https://github.com/max397574/care.nvim
 - https://github.com/xzbdmw/colorful-menu.nvim
+
+<!-- vim: set conceallevel=0: -->
