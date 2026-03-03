@@ -3,6 +3,7 @@ local sup = require('supporter')
 sup.insert('ft-lsp', {
     { 'lua-language-server', { 'lua' } },
     { 'nil', { 'nix' } },
+    { 'yaml-language-server', { 'yaml', 'yaml.docker-compose', 'yaml.gitlab', 'yaml.helm-values' } }
 })
 
 return {

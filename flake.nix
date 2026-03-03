@@ -29,6 +29,7 @@
     lsp = with pkgs; [
       lua-language-server
       nil
+      yaml-language-server
     ];
 
     full-deps = deps++lsp;
