@@ -8,6 +8,10 @@ vim.pack
 
 ## Installed
 
+### Bloat
+
+- [mini-animate](https://github.com/nvim-mini/mini.animate) - Neovim Lua plugin to animate common Neovim actions. Part of 'mini.nvim' library.
+
 ### Colorschemes
 
 - [onedark.nvim](https://github.com/navarasu/onedark.nvim) - One dark and light colorscheme for neovim >= 0.5.0 written in lua based on Atom's One Dark and Light theme.
@@ -68,22 +72,25 @@ vim.pack
 ## TODO
 
 - https://github.com/marcocofano/excalidraw.nvim
+- https://github.com/nvim-treesitter/nvim-treesitter
+- https://github.com/mfussenegger/nvim-dap
 - https://github.com/igorlfs/nvim-dap-view
-- https://github.com/marcocofano/excalidraw.nvim
--
+- https://github.com/nvim-neotest/neotest
+- https://github.com/stevearc/overseer.nvim
+- https://github.com/stevearc/resession.nvim
+- https://github.com/pianocomposer321/officer.nvim
 - https://www.reddit.com/r/neovim/comments/1gbtr00/neogit_adds_gitgraphnvim_git_log_renderer_for/
 - https://github.com/folke/ts-comments.nvim
 - https://github.com/Bekaboo/dropbar.nvim
 - https://github.com/Willem-J-an/visidata.nvim
-- yaml-language-server
+- https://github.com/gruvw/strudel.nvim
+- https://github.com/franco-ruggeri/overseer-extra.nvim
+- https://github.com/hat0uma/csvview.nvim
 - https://www.reddit.com/r/neovim/comments/1c1id24/vscode_like_path_display_in_fzfluas_files_picker/
 - https://www.reddit.com/r/neovim/comments/1gthknw/wezterm_max_fps_240_is_crazy/
 - https://www.reddit.com/r/neovim/comments/1r9lwvf/psa_theres_a_new_debug_adapter_for_lua
 - https://www.reddit.com/r/neovim/comments/1r0oeq9/camouflagenvim_hide_sensitive_values_in_config/
-- https://github.com/hat0uma/csvview.nvim
 - https://www.reddit.com/r/neovim/comments/1pgtipw/fzflua_is_extending_into_the_shellcli_undotree/
-- https://github.com/gruvw/strudel.nvim
-- https://github.com/franco-ruggeri/overseer-extra.nvim
 - https://www.reddit.com/r/neovim/comments/1mgn1p6/fzfluafrecency_vscodelike_global_picker_combining/
 - https://github.com/pxwg/math-conceal.nvim
 - https://www.reddit.com/r/neovim/comments/199c6zd/seamless_jupyter_notebook_editing_in_neovim_demo/

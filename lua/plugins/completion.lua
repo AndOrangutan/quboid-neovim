@@ -76,7 +76,7 @@ return {
                         menu = {
                             border = 'none',
                             draw = {
-                                columns = { { 'kind_icon' }, { 'label', 'label_description', gap = 1 }, { 'source_name', gap = 1 } },
+                                columns = { { 'kind_icon' }, { 'label', gap = 1 }, { 'source_name', gap = 1 } },
                                 components = {
                                     label = {
                                         width = { fill = true, max = 60 },

@@ -30,10 +30,10 @@ return {
                 -- TODO: add trouble
             },
             lazy = true,
-            event = {'BufReadPost', 'BufNewFile', 'BufWritePre'},
+            event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' },
             cmd = {
             },
-            after = function ()
+            after = function()
                 local icons = require('icons')
                 require('gitsigns').setup({
                     signs = {
@@ -64,7 +64,7 @@ return {
             cmd = {
                 'Neogit'
             },
-            after = function ()
+            after = function()
                 require('neogit').setup({
                     integrations = {
                         diffview = true,

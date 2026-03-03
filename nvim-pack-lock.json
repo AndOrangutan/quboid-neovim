@@ -32,6 +32,10 @@
       "rev": "ab1c3202c62fc19a33ede14a8b6fc66e772b91d7",
       "src": "https://github.com/BirdeeHub/lze"
     },
+    "mini.animate": {
+      "rev": "8814b56e282cd86635ce9a392ed56b6a85f59731",
+      "src": "https://github.com/nvim-mini/mini.animate"
+    },
     "mini.files": {
       "rev": "fafacfecdd6c5a66bb10d173a749f3c098e84498",
       "src": "https://github.com/nvim-mini/mini.files"
