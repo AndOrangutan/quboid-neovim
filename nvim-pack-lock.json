@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "auto-cmdheight.nvim": {
+      "rev": "82619eab0268f27024e1e0981ec3721a003ab2b7",
+      "src": "https://github.com/jake-stewart/auto-cmdheight.nvim"
+    },
     "blink.cmp": {
       "rev": "85666c58d8ed49539794e913fd15f508af2ca8fb",
       "src": "https://github.com/saghen/blink.cmp"

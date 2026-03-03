@@ -58,6 +58,7 @@ vim.pack
 
 ### Util
 
+- [auto-cmdheight.nvim](https://github.com/jake-stewart/auto-cmdheight.nvim) - This plugin dynamically resizes your 'cmdheight' to fit the content of messages displayed via vim.api.nvim_echo(), vim.print(), and print().
 - [vim-startuptime](https://github.com/dstein64/vim-startuptime) - A plugin for viewing Vim and Neovim startup event timing information.
 
 ### Window Managment
@@ -69,7 +70,7 @@ vim.pack
 - https://github.com/marcocofano/excalidraw.nvim
 - https://github.com/igorlfs/nvim-dap-view
 - https://github.com/marcocofano/excalidraw.nvim
-- https://github.com/jake-stewart/auto-cmdheight.nvim
+-
 - https://www.reddit.com/r/neovim/comments/1gbtr00/neogit_adds_gitgraphnvim_git_log_renderer_for/
 - https://github.com/folke/ts-comments.nvim
 - https://github.com/Bekaboo/dropbar.nvim
