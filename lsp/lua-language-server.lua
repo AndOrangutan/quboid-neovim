@@ -8,21 +8,26 @@ return {
                 -- Get the language server to recognize the `vim` global
                 globals = { 'vim' },
             },
+            hint = {
+                enable = true,
+                arrayIndex = 'Disable',
+                setType = true,
+            },
             runtime = {
                 version = 'LuaJIT',
             },
-            signatureHelp = { enabled = true },
             workspace = {
                 -- This makes the server aware of all your installed plugins
                 library = (function()
-                    local lib = {
-                        vim.env.VIMRUNTIME,
-                    }
-                    -- Use a protected call to gather runtime files
-                    -- This ensures all plugins (including lze) are added to the path
-                    local paths = vim.api.nvim_get_runtime_file("", true)
-                    for _, path in ipairs(paths) do
-                        table.insert(lib, path)
+                    local lib = { vim.env.VIMRUNTIME }
+                    for _, path in ipairs(vim.api.nvim_list_runtime_paths()) do
+                        if path:match("/pack/") then
+                            table.insert(lib, path)
+                            local lua_path = path .. "/lua"
+                            if vim.fn.isdirectory(lua_path) == 1 then
+                                table.insert(lib, lua_path)
+                            end
+                        end
                     end
                     return lib
                 end)(),
