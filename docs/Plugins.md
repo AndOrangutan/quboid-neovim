@@ -52,6 +52,10 @@ vim.pack
 
 - [fzf-lua](https://github.com/ibhagwan/fzf-lua) - Improved fzf.vim written in lua.
 
+### Treesitter
+
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Nvim Treesitter configurations and abstraction layer.
+
 ### UI
 
 #### Core
