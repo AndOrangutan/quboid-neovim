@@ -10,5 +10,5 @@ vim.opt_local.textwidth = 0
 vim.opt_local.breakindent = true
 vim.opt_local.conceallevel = 2
 
-vim.keymap.set('n', 'j', 'gj', { desc = 'Wrap [j]ump Down', buffer = true })
-vim.keymap.set('n', 'k', 'gk', { desc = 'Wrap [k]ick Up', buffer = true })
+vim.keymap.set('n', 'j', 'v:count == 0 ? "gj" : "j"', { desc = 'Wrap [j]ump Down', buffer = true, expr = true, silent = true })
+vim.keymap.set('n', 'k', 'v:count == 0 ? "gk" : "k"', { desc = 'Wrap [k]ick Up', buffer = true, expr = true, silent = true })

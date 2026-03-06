@@ -76,7 +76,6 @@ vim.pack
 ## TODO
 
 - https://github.com/marcocofano/excalidraw.nvim
-- https://github.com/nvim-treesitter/nvim-treesitter
 - https://github.com/mfussenegger/nvim-dap
 - https://github.com/igorlfs/nvim-dap-view
 - https://github.com/nvim-neotest/neotest

@@ -1,4 +1,3 @@
-
 return {
     {
         src = 'https://github.com/nvim-mini/mini.animate',
@@ -9,7 +8,11 @@ return {
             },
             lazy = true,
             after = function ()
-                require('mini.animate').setup()
+                require('mini.animate').setup({
+                    scroll = {
+                        timing = function(_, n) return math.min(250 / n, 5) end,
+                    }
+                })
             end,
             keys = {
                 { lhs = 'n', rhs = '<Cmd>lua vim.cmd("normal! n"); ' .. 'MiniAnimate.execute_after("scroll", "normal! zvzz")<CR>' , desc = 'Smooth Center [n]ext' },
