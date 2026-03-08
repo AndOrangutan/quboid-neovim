@@ -65,8 +65,9 @@ vim.pack
 
 #### Core
 
--- [mini.files](https://github.com/nvim-mini/mini.files) - Navigate and manipulate file system. Part of 'mini.nvim' library.
--- [statuscol.nvim](https://github.com/luukvbaal/statuscol.nvim) - Status column plugin that provides a configurable 'statuscolumn' and click handlers.
+- [mini.clue](https://github.com/nvim-mini/mini.clue) -  Show next key clues. Part of 'mini.nvim' library.
+- [mini.files](https://github.com/nvim-mini/mini.files) - Navigate and manipulate file system. Part of 'mini.nvim' library.
+- [statuscol.nvim](https://github.com/luukvbaal/statuscol.nvim) - Status column plugin that provides a configurable 'statuscolumn' and click handlers.
 
 
 ### Util

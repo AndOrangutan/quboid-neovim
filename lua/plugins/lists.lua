@@ -9,7 +9,7 @@ return {
             lazy = true,
             cmd = {
             },
-            after = function ()
+          after = function ()
                 require('todo-comments').setup()
             end,
             keys = {
