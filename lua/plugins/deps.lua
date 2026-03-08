@@ -11,6 +11,7 @@ return {
                 'lspconfig',
                 'obsidian.nvim',
                 'todo-comments.nvim',
+                'render-markdown.nvim',
             },
             after = function ()
                 require('mini.icons').setup()
@@ -25,6 +26,7 @@ return {
             lazy = true,
             dep_of = {
                 'neogit',
+                'todo-comments.nvim',
             },
         },
     },

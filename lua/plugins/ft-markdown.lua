@@ -1,6 +1,41 @@
 local deus_vault = vim.fn.expand('~')..'/Sync/Notes/compendium/'
 
 return  {
+
+    {
+        src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim',
+        -- version = vim.version.range('*'),
+        --#module lze
+        ---@type lze
+        data = {
+            ft = {
+                'markdown',
+            },
+            lazy = true,
+            cmd = {
+            },
+            after = function ()
+                ---@module 'render-markdown'
+                ---@type render.md.UserConfig
+                require('render-markdown').setup({
+                    link = { enabled = false },
+                    heading = {
+                        icons = {
+                            '󰬺 '..' ',
+                            '󰬻 '..' ',
+                            '󰬼 '..' ',
+                            '󰬽 '..' ',
+                            '󰬾 '..' ',
+                            '󰬿 '..' ',
+                            '󰭀 '..' ',
+                            '󰭁 '..' ',
+                            '󰭂 '..' ',
+                        },
+                    },
+                })
+            end,
+        },
+    },
     {
         src = 'https://github.com/obsidian-nvim/obsidian.nvim',
         -- version = vim.version.range('*'),

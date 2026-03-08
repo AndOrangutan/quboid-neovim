@@ -7,6 +7,8 @@ local ts_support = {
     'cpp',
     'disassembly',
     'doxygen',
+    'html',
+    'latex',
     'lua',
     'make',
     'markdown',
@@ -16,6 +18,7 @@ local ts_support = {
     'objdump',
     'python',
     'vimdoc',
+    'yaml',
     'zsh',
 }
 
@@ -31,6 +34,7 @@ return {
         data = {
             dep_of = {
                 'trouble.nvim',
+                'render-markdown.nvim',
             },
             lazy = false,
             run = function ()

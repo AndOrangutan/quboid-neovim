@@ -36,6 +36,7 @@ vim.pack
 #### Markdown
 
 - [obsidian.nvim](https://github.com/obsidian-nvim/obsidian.nvim) -  Obsidian <3 Neovim (actively maintained version)
+- [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) - Plugin to improve viewing Markdown files in Neovim.
 
 ### Git
 

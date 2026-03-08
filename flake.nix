@@ -17,19 +17,27 @@
     overlays = [neovim-nightly-overlay.overlays.default];
   };
 
+
+  extraPythonPackages = ps: with ps; [
+    pylatexenc
+  ];
+
+  pythonEnv = pkgs.python3.withPackages (ps: [ ps.pylatexenc ]);
+
   compilers = with pkgs; [
     cargo
-    clang-tools
-    gcc
+      clang-tools
+      gcc
   ];
 
   deps = with pkgs; [
     curl
-    fd
-    fzf
-    git
-    ripgrep
-    tree-sitter
+      fd
+      fzf
+      git
+      ripgrep
+      tree-sitter
+      pythonEnv
   ];
 
   lsp = with pkgs; [
@@ -38,10 +46,13 @@
       yaml-language-server
   ];
 
-  full-deps = compilers++deps++lsp;
+  full-deps = compilers ++ deps ++ lsp;
   bind-path = pkgs.lib.makeBinPath full-deps;
   in {
     packages."${system}".default = pkgs.wrapNeovim pkgs.neovim {
+      withPython3 = true;
+      extraPython3Packages = extraPythonPackages;
+
       configure = {
         customRC = ''
           lua << EOF
@@ -58,6 +69,7 @@
     };
 
     devShells."${system}".default = pkgs.mkShell {
+      buildInputs = full-deps ++ [ (pkgs.python3.withPackages extraPythonPackages) ];
       shellHook = ''
         export NVIM_DEV_PATH=$(pwd)
         echo "Neovim Dev Mode Enabled: Using $(pwd) for config"
