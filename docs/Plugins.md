@@ -43,6 +43,10 @@ vim.pack
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) - Git integration for buffers.
 - [neogit](https://github.com/NeogitOrg/neogit) - An interactive and powerful Git interface for Neovim, inspired by Magit.
 
+### Lists
+
+- [trouble.nvim](https://github.com/folke/trouble.nvim) - A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing.
+
 ### LSP
 
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Quickstart configs for Nvim LSP.

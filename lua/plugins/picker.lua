@@ -5,6 +5,7 @@ return {
         data = {
             dep_of = {
                 'obsidian.nvim',
+                'trouble.nvim',
             },
             after = function()
                 ---@module "fzf-lua"

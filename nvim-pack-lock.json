@@ -24,6 +24,10 @@
       "rev": "42d6aed4e94e0f0bbced16bbdcc42f57673bd75e",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
+    "latex.nvim": {
+      "rev": "55e4373ab02e70baf392d12383ef78bb18a6ba3d",
+      "src": "https://github.com/robbielyman/latex.nvim"
+    },
     "lazydev.nvim": {
       "rev": "5231c62aa83c2f8dc8e7ba957aa77098cda1257d",
       "src": "https://github.com/folke/lazydev.nvim"
@@ -31,6 +35,10 @@
     "lze": {
       "rev": "ab1c3202c62fc19a33ede14a8b6fc66e772b91d7",
       "src": "https://github.com/BirdeeHub/lze"
+    },
+    "math-conceal.nvim": {
+      "rev": "b5505ed1b6846255dd0ea307dcfbcc3bd01fbe76",
+      "src": "https://github.com/pxwg/math-conceal.nvim"
     },
     "mini.animate": {
       "rev": "8814b56e282cd86635ce9a392ed56b6a85f59731",
@@ -80,6 +88,10 @@
     "tiny-inline-diagnostic.nvim": {
       "rev": "ecce93ff7db4461e942c03e0fcc64bd785df4057",
       "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
+    },
+    "trouble.nvim": {
+      "rev": "bd67efe408d4816e25e8491cc5ad4088e708a69a",
+      "src": "https://github.com/folke/trouble.nvim"
     },
     "vim-startuptime": {
       "rev": "b6f0d93f6b8cf6eee0b4c94450198ba2d6a05ff6",

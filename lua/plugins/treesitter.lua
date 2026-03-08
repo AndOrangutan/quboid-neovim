@@ -30,6 +30,7 @@ return {
         ---@type lze.pack.Spec[]
         data = {
             dep_of = {
+                'trouble.nvim',
             },
             lazy = false,
             run = function ()
