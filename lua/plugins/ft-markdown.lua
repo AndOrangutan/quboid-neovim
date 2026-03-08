@@ -3,7 +3,7 @@ local deus_vault = vim.fn.expand('~')..'/Sync/Notes/compendium/'
 return  {
     {
         src = 'https://github.com/obsidian-nvim/obsidian.nvim',
-        version = '*',
+        -- version = vim.version.range('*'),
         --#module lze
         ---@type lze
         data = {
