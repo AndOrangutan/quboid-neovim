@@ -60,6 +60,14 @@
       "rev": "9b1caf2bed78bdaafd1107cd6cfe38d9382dea93",
       "src": "https://github.com/obsidian-nvim/obsidian.nvim"
     },
+    "oil-git-status.nvim": {
+      "rev": "a3e2ccb00cb8822115e28a9a1791eda051d940c9",
+      "src": "https://github.com/refractalize/oil-git-status.nvim"
+    },
+    "oil-git.nvim": {
+      "rev": "6c92acdbae04dce8a4a2302c3a5dd264bd337456",
+      "src": "https://github.com/malewicz1337/oil-git.nvim"
+    },
     "oil.nvim": {
       "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
       "src": "https://github.com/stevearc/oil.nvim"

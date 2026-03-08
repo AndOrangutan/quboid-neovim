@@ -67,6 +67,7 @@ vim.pack
 #### Buffer
 
 - [oil.nvim](https://github.com/stevearc/oil.nvim) - Neovim file explorer: edit your filesystem like a buffer.
+- [oil-git.nvim](https://github.com/malewicz1337/oil-git.nvim) - Async Git status integration for oil.nvim
 
 #### Core
 

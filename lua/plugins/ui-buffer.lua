@@ -6,6 +6,9 @@ return {
         ---@type lze.pack.Spec[]
         data = {
             lazy = false,
+            dep_of = {
+                'oil-git-status.nvim',
+            },
             after = function ()
                 function _G.get_oil_winbar()
                     local bufnr = vim.api.nvim_win_get_buf(vim.g.statusline_winid)
@@ -39,6 +42,7 @@ return {
                     },
                     win_options = {
                         winbar = '%!v:lua.get_oil_winbar()',
+                        signcolumn = 'yes',
                     },
                 })
                 vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory (Oil)' })
@@ -46,8 +50,28 @@ return {
         },
         cmd = 'Oil',
         keys = {
-            -- { lhs = '-', rhs = '<CMD>Oil<CR>', desc = 'Open Parent Directory (Oil)' },
         },
     },
+    {
+        src = 'https://github.com/malewicz1337/oil-git.nvim',
+        ---@type lze.pack.Spec[]
+        data = {
+            lazy = false,
+            after = function ()
+                -- local icons = require('icons')
 
+                require("oil-git").setup({
+                    show_file_symbols = false,
+                    show_file_highlights = true,
+                    show_directory_highlights = false,
+                    show_ignored_files = true,
+                    symbol_position = 'signcolumn',
+                    can_use_signcolmn = true,
+                    show_directory_symbols = false
+                })
+            end,
+        },
+        keys = {
+        },
+    },
 }
