@@ -1,9 +1,30 @@
 return {
+
+    {
+        src = 'https://github.com/folke/todo-comments.nvim',
+        ---@type lze.pack.Spec[]
+        data = {
+            dep_of = {
+            },
+            lazy = true,
+            cmd = {
+            },
+            after = function ()
+                require('todo-comments').setup()
+            end,
+            keys = {
+                { lhs = ']t', rhs = '<CMD>lua require("todo-comments").jump_next()<CR>', desc = 'Next [t]odo (todo-comments)' },
+                { lhs = '[t', rhs = '<CMD>lua require("todo-comments").jump_prev()<CR>', desc = 'Previous [t]odo (todo-comments)' },
+                { lhs = '<leader>pt', rhs = '<CMD>TodoFzfLua<CR>', desc = '[p]icker [t]odo (todo-comments)' },
+            },
+        },
+    },
     {
         src = 'https://github.com/folke/trouble.nvim',
         ---@type lze.pack.Spec[]
         data = {
             dep_of = {
+                'todo-comments.nvim',
             },
             lazy = true,
             cmd = {
