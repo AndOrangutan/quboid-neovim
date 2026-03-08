@@ -10,8 +10,9 @@ return {
                 'fzf-lua',
                 'lspconfig',
                 'obsidian.nvim',
-                'todo-comments.nvim',
+                'oil.nvim',
                 'render-markdown.nvim',
+                'todo-comments.nvim',
             },
             after = function ()
                 require('mini.icons').setup()

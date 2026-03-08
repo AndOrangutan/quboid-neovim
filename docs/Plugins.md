@@ -64,6 +64,10 @@ vim.pack
 
 ### UI
 
+#### Buffer
+
+- [oil.nvim](https://github.com/stevearc/oil.nvim) - Neovim file explorer: edit your filesystem like a buffer.
+
 #### Core
 
 - [mini.clue](https://github.com/nvim-mini/mini.clue) -  Show next key clues. Part of 'mini.nvim' library.

@@ -60,6 +60,10 @@
       "rev": "9b1caf2bed78bdaafd1107cd6cfe38d9382dea93",
       "src": "https://github.com/obsidian-nvim/obsidian.nvim"
     },
+    "oil.nvim": {
+      "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
     "onedark.nvim": {
       "rev": "213c23ae45a04797572242568d5d51937181792d",
       "src": "https://github.com/navarasu/onedark.nvim"
