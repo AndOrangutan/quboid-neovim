@@ -68,10 +68,12 @@ vim.pack
 
 - [oil.nvim](https://github.com/stevearc/oil.nvim) - Neovim file explorer: edit your filesystem like a buffer.
 - [oil-git.nvim](https://github.com/malewicz1337/oil-git.nvim) - Async Git status integration for oil.nvim
+- [oil-lsp-diagnostics.nvim](https://github.com/JezerM/oil-lsp-diagnostics.nvim) - LSP Diagnostics in oil.nvim.
 
 #### Core
 
 - [mini.clue](https://github.com/nvim-mini/mini.clue) -  Show next key clues. Part of 'mini.nvim' library.
+- [mini.notify](https://github.com/nvim-mini/mini.notify) - Show notifications. Part of 'mini.nvim' library.
 - [statuscol.nvim](https://github.com/luukvbaal/statuscol.nvim) - Status column plugin that provides a configurable 'statuscolumn' and click handlers.
 
 
@@ -100,6 +102,14 @@ vim.pack
 - https://github.com/gruvw/strudel.nvim
 - https://github.com/franco-ruggeri/overseer-extra.nvim
 - https://github.com/hat0uma/csvview.nvim
+- https://github.com/Kaiser-Yang/blink-cmp-git
+- https://github.com/erooke/blink-cmp-latex
+- https://github.com/chentoast/marks.nvim
+- https://github.com/hat0uma/csvview.nvim
+- https://github.com/jbyuki/one-small-step-for-vimkind
+- https://github.com/danymat/neogen
+- https://github.com/stevearc/conform.nvim
+- https://github.com/letieu/jira.nvim
 - https://www.reddit.com/r/neovim/comments/1c1id24/vscode_like_path_display_in_fzfluas_files_picker/
 - https://www.reddit.com/r/neovim/comments/1gthknw/wezterm_max_fps_240_is_crazy/
 - https://www.reddit.com/r/neovim/comments/1r9lwvf/psa_theres_a_new_debug_adapter_for_lua

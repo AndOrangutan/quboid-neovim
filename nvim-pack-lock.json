@@ -44,6 +44,10 @@
       "rev": "5b9076dae1bfbe47ba4a14bc8b967cde0ab5d77e",
       "src": "https://github.com/nvim-mini/mini.icons"
     },
+    "mini.notify": {
+      "rev": "e506fb6da26c0a31ee6b1d2eb99626cb147f28ca",
+      "src": "https://github.com/nvim-mini/mini.notify"
+    },
     "neogit": {
       "rev": "8fd90675caf8b847280ca56f464b66030adad876",
       "src": "https://github.com/NeogitOrg/neogit"
@@ -67,6 +71,10 @@
     "oil-git.nvim": {
       "rev": "6c92acdbae04dce8a4a2302c3a5dd264bd337456",
       "src": "https://github.com/malewicz1337/oil-git.nvim"
+    },
+    "oil-lsp-diagnostics.nvim": {
+      "rev": "282308383d8d8485937aaf3c28b44fa1cb26007a",
+      "src": "https://github.com/JezerM/oil-lsp-diagnostics.nvim"
     },
     "oil.nvim": {
       "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",

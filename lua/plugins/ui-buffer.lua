@@ -8,6 +8,7 @@ return {
             lazy = false,
             dep_of = {
                 'oil-git-status.nvim',
+                'oil-lsp-diagnostics.nvim',
             },
             after = function ()
                 function _G.get_oil_winbar()
@@ -42,7 +43,7 @@ return {
                     },
                     win_options = {
                         winbar = '%!v:lua.get_oil_winbar()',
-                        signcolumn = 'yes',
+                        -- signcolumn = 'yes',
                     },
                 })
                 vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory (Oil)' })
@@ -60,7 +61,7 @@ return {
             after = function ()
                 -- local icons = require('icons')
 
-                require("oil-git").setup({
+                require('oil-git').setup({
                     show_file_symbols = false,
                     show_file_highlights = true,
                     show_directory_highlights = false,
@@ -71,7 +72,18 @@ return {
                 })
             end,
         },
-        keys = {
+    },
+    {
+        src = 'https://github.com/JezerM/oil-lsp-diagnostics.nvim',
+        ---@type lze.pack.Spec[]
+        data = {
+            lazy = false,
+            after = function ()
+                -- local icons = require('icons')
+
+                require('oil-lsp-diagnostics').setup({
+                })
+            end,
         },
     },
 }

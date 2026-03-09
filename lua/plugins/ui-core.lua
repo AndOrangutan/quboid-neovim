@@ -54,6 +54,21 @@ return {
         },
     },
     {
+        src = 'https://github.com/nvim-mini/mini.notify',
+        ---@type lze.pack.Spec[]
+        data = {
+            lazy = false,
+            after = function ()
+                require('mini.notify').setup()
+
+                vim.api.nvim_create_user_command('Messages', function()
+                    vim.cmd[[split]]
+                    MiniNotify.show_history()
+                end, { desc = 'Show notification history (mini.notify)' })
+            end,
+        },
+    },
+    {
         src = 'https://github.com/luukvbaal/statuscol.nvim',
         ---@type lze.pack.Spec[]
         data = {
