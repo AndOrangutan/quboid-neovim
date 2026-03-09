@@ -12,6 +12,7 @@ vim.pack
 
 - [mini-animate](https://github.com/nvim-mini/mini.animate) - Neovim Lua plugin to animate common Neovim actions. Part of 'mini.nvim' library.
 
+
 ### Colorschemes
 
 - [onedark.nvim](https://github.com/navarasu/onedark.nvim) - One dark and light colorscheme for neovim >= 0.5.0 written in lua based on Atom's One Dark and Light theme.
@@ -57,6 +58,11 @@ vim.pack
 ### Picker
 
 - [fzf-lua](https://github.com/ibhagwan/fzf-lua) - Improved fzf.vim written in lua.
+
+
+### Runner
+
+- [overseer.nvim](https://github.com/stevearc/overseer.nvim) - A task runner and job management plugin for Neovim.
 
 ### Treesitter
 

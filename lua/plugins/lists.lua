@@ -7,9 +7,10 @@ return {
             dep_of = {
             },
             lazy = true,
+            event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' },
             cmd = {
             },
-          after = function ()
+            after = function ()
                 require('todo-comments').setup()
             end,
             keys = {
