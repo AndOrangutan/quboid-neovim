@@ -74,6 +74,7 @@ vim.pack
 
 - [mini.clue](https://github.com/nvim-mini/mini.clue) -  Show next key clues. Part of 'mini.nvim' library.
 - [mini.notify](https://github.com/nvim-mini/mini.notify) - Show notifications. Part of 'mini.nvim' library.
+- [mini.statusline](https://github.com/nvim-mini/mini.statusline) - Neovim Lua plugin with minimal and fast statusline. Part of 'mini.nvim' library.
 - [statuscol.nvim](https://github.com/luukvbaal/statuscol.nvim) - Status column plugin that provides a configurable 'statuscolumn' and click handlers.
 
 

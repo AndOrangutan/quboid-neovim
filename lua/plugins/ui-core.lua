@@ -69,6 +69,25 @@ return {
         },
     },
     {
+        src = 'https://github.com/nvim-mini/mini.statusline',
+        ---@type lze.pack.Spec[]
+        data = {
+            lazy = false,
+            after = function ()
+                require('mini.statusline').setup({
+                    -- -- Content of statusline as functions which return statusline string. See
+                    -- -- `:h statusline` and code of default contents (used instead of `nil`).
+                    -- content = {
+                    --     -- Content for active window
+                    --     active = nil,
+                    --     -- Content for inactive window(s)
+                    --     inactive = nil,
+                    -- },
+                })
+            end,
+        },
+    },
+    {
         src = 'https://github.com/luukvbaal/statuscol.nvim',
         ---@type lze.pack.Spec[]
         data = {

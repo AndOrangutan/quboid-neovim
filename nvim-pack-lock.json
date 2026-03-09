@@ -48,6 +48,10 @@
       "rev": "e506fb6da26c0a31ee6b1d2eb99626cb147f28ca",
       "src": "https://github.com/nvim-mini/mini.notify"
     },
+    "mini.statusline": {
+      "rev": "8c3829d4ef02b693f68e43fc131b433f11049b2b",
+      "src": "https://github.com/nvim-mini/mini.statusline"
+    },
     "neogit": {
       "rev": "8fd90675caf8b847280ca56f464b66030adad876",
       "src": "https://github.com/NeogitOrg/neogit"
