@@ -4,6 +4,10 @@
       "rev": "82619eab0268f27024e1e0981ec3721a003ab2b7",
       "src": "https://github.com/jake-stewart/auto-cmdheight.nvim"
     },
+    "auto-session": {
+      "rev": "62437532b38495551410b3f377bcf4aaac574ebe",
+      "src": "https://github.com/rmagatti/auto-session"
+    },
     "blink.cmp": {
       "rev": "e9556f9b981f395e22a6bfd69fd5f3008a2a6cd9",
       "src": "https://github.com/saghen/blink.cmp"
