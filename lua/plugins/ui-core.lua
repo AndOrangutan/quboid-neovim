@@ -2,6 +2,20 @@ local sup = require('supporter')
 
 
 return {
+
+    {
+        src = 'https://github.com/Bekaboo/dropbar.nvim',
+        ---@type lze.pack.Spec[]
+        data = {
+            -- TODO: integrate icons across plugins
+            lazy = false,
+            keys = {
+                { lhs = '<leader>;', rhs = '<Cmd>lua require("dropbar.api").pick()<CR>' , desc = 'Pick Winbar (dropbar)' },
+                { lhs = '[;', rhs = '<Cmd>lua require("dropbar.api").goto_context_start()<CR>' , desc = 'Goto Prev Winbar Context (dropbar)' },
+                { lhs = '];', rhs = '<Cmd>lua require("dropbar.api").select_next_context()<CR>' , desc = 'Goto Next Winbar Context (dropbar)' },
+            },
+        },
+    },
     {
         src = 'https://github.com/nvim-mini/mini.clue',
         ---@type lze.pack.Spec[]

@@ -78,6 +78,7 @@ vim.pack
 
 #### Core
 
+- [dropbar.nvim](https://github.com/Bekaboo/dropbar.nvim) - IDE-like breadcrumbs, out of the box.
 - [mini.clue](https://github.com/nvim-mini/mini.clue) -  Show next key clues. Part of 'mini.nvim' library.
 - [mini.notify](https://github.com/nvim-mini/mini.notify) - Show notifications. Part of 'mini.nvim' library.
 - [mini.statusline](https://github.com/nvim-mini/mini.statusline) - Neovim Lua plugin with minimal and fast statusline. Part of 'mini.nvim' library.
