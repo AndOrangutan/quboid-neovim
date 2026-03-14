@@ -27,6 +27,12 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 vim.api.nvim_create_autocmd({"BufWritePre"}, {
     pattern = "*",
     callback = function(event)
+
+        local sup = require('supporter')
+        if vim.list_contains(sup.by('ft-exclude'), vim.bo.filetype) then
+            return
+        end
+
         local dir = vim.fn.fnamemodify(event.file, ":p:h")
         if vim.fn.isdirectory(dir) == 0 then
             vim.fn.mkdir(dir, "p")

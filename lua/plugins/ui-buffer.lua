@@ -1,4 +1,9 @@
-
+local sup = require('supporter')
+sup.insert('ft-exclude', {
+    { 'oil', {
+        'oil'
+    } }
+})
 
 return {
     {
