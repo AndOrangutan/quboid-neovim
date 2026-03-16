@@ -43,6 +43,7 @@
   lsp = with pkgs; [
     lua-language-server
       nil
+      ruff
       yaml-language-server
   ];
 
