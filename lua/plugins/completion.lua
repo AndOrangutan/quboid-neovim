@@ -29,6 +29,7 @@ return {
             dep_of = {
                 'lspconfig',
                 'obsidian.nvim',
+                'otter.nvim',
             },
             lazy = true,
             run = function (data)

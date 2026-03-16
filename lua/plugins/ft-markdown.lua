@@ -1,5 +1,14 @@
 local deus_vault = vim.fn.expand('~')..'/Sync/Notes/compendium/'
 
+local md_support = {
+    'markdown',
+}
+
+
+require('supporter').insert('ft-plugin', {
+    { 'ft-markdown', md_support}
+})
+
 return  {
 
     {
@@ -8,9 +17,7 @@ return  {
         --#module lze
         ---@type lze
         data = {
-            ft = {
-                'markdown',
-            },
+            ft = md_support,
             lazy = true,
             cmd = {
             },
@@ -37,14 +44,28 @@ return  {
         },
     },
     {
+        src = 'https://github.com/jmbuhr/otter.nvim',
+        ---@type lze.pack.Spec[]
+        data = {
+            lazy = false,
+            ft = md_support,
+            after = function ()
+                vim.api.nvim_create_autocmd('FileType', {
+                    pattern = md_support,
+                    callback = function()
+                        require('otter').activate()
+                    end,
+                })
+            end
+        },
+    },
+    {
         src = 'https://github.com/obsidian-nvim/obsidian.nvim',
         -- version = vim.version.range('*'),
         --#module lze
         ---@type lze
         data = {
-            ft = {
-                'markdown',
-            },
+            ft = md_support,
             lazy = true,
             dep_of = {
             },

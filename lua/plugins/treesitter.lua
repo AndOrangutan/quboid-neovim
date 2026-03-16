@@ -33,6 +33,7 @@ return {
         ---@type lze.pack.Spec[]
         data = {
             dep_of = {
+                'otter.nvim',
                 'trouble.nvim',
                 'render-markdown.nvim',
             },
@@ -48,7 +49,12 @@ return {
 
                 vim.api.nvim_create_autocmd('FileType', {
                     pattern = ts_support,
-                    callback = function() vim.treesitter.start() end,
+                    callback = function()
+                        vim.treesitter.start()
+                        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                        vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+                        vim.wo[0][0].foldmethod = 'expr'
+                    end,
                 })
             end,
         },

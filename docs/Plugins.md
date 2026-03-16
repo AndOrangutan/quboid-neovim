@@ -37,6 +37,8 @@ vim.pack
 #### Markdown
 
 - [obsidian.nvim](https://github.com/obsidian-nvim/obsidian.nvim) -  Obsidian <3 Neovim (actively maintained version)
+<!-- - [nvim-FeMaco.lua](https://github.com/AckslD/nvim-FeMaco.lua) - Catalyze your Fenced Markdown Code-block editing! -->
+- [nvim-FeMaco.lua](https://github.com/gen4438/nvim-FeMaco.lua) - Catalyze your Fenced Markdown Code-block editing!
 - [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) - Plugin to improve viewing Markdown files in Neovim.
 
 ### Git
@@ -58,7 +60,6 @@ vim.pack
 ### Picker
 
 - [fzf-lua](https://github.com/ibhagwan/fzf-lua) - Improved fzf.vim written in lua.
-
 
 ### Runner
 

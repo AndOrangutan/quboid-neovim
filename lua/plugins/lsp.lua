@@ -6,13 +6,17 @@ sup.insert('ft-lsp', {
     { 'yaml-language-server', { 'yaml', 'yaml.docker-compose', 'yaml.gitlab', 'yaml.helm-values' } }
 })
 
+local lsp_support = require('supporter').by('ft-lsp')
+table.insert(lsp_support, 'markdown')
+
 return {
     {
         src = 'https://github.com/neovim/nvim-lspconfig',
         ---@type lze.Spec[]
         data = {
             lazy = true,
-            ft  = require('supporter').by('ft-lsp'),
+            -- ft  = function() return vim.table.insert(require('supporter').by('ft-lsp'), 'markdown') end,
+            ft  = lsp_support,
             dep_of = {
             },
             cmd = {
