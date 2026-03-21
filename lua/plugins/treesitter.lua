@@ -8,6 +8,7 @@ local ts_support = {
     'disassembly',
     'doxygen',
     'html',
+    'java',
     'latex',
     'lua',
     'make',

@@ -50,11 +50,13 @@ return  {
             lazy = false,
             ft = md_support,
             after = function ()
-                vim.api.nvim_create_autocmd('FileType', {
-                    pattern = md_support,
+                vim.api.nvim_create_autocmd("InsertEnter", {
+                    group = vim.api.nvim_create_augroup("otter-autostart", {}),
+                    -- ...But this only runs in markdown and quarto documents
+                    pattern = { "*.md", "*.qmd" },
                     callback = function()
-                        require('otter').activate()
-                    end,
+                        vim.schedule(function () require('otter').activate() end)
+                    end
                 })
             end
         },
