@@ -1,6 +1,7 @@
 local sup = require('supporter')
 
 sup.insert('ft-lsp', {
+    { 'basedpyright', { 'python' } },
     { 'lua-language-server', { 'lua' } },
     { 'nil', { 'nix' } },
     { 'ruff', { 'python' } },

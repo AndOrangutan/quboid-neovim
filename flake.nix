@@ -44,6 +44,7 @@
     lua-language-server
       nil
       ruff
+      basedpyright
       yaml-language-server
   ];
 
