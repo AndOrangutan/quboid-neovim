@@ -67,8 +67,14 @@ _M.get_capabilities = function ()
     local blink_ok, blink = pacll(require, 'blink.cmp')
     local capabilities = {}
     local def_capabilities = {
-        offsetEncoding = { 'utf-16' },
+        offsetEncoding = { 'utf-8', 'utf-16' },
         workspace = { didChangeWatchedFiles = { dynamicRegistration = true } },
+        textDocument = {
+            completion = {
+                editsNearCursor = true,
+                completionItem = { snippetSupport = true },
+            }
+        },
     }
     if blink_ok then
         capabilities = require('blink.cmp').get_lsp_capabilities(def_capabilities)

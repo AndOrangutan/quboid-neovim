@@ -10,53 +10,55 @@
     self,
     nixpkgs,
     neovim-nightly-overlay,
-  }: let
-  system = "x86_64-linux";
-  pkgs = import nixpkgs {
-    inherit system;
-    overlays = [neovim-nightly-overlay.overlays.default];
-  };
+    }: let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [neovim-nightly-overlay.overlays.default];
+      };
 
 
-  extraPythonPackages = ps: with ps; [
-    pylatexenc
-  ];
+      extraPythonPackages = ps: with ps; [
+        pylatexenc
+      ];
 
-  pythonEnv = pkgs.python3.withPackages (ps: [ ps.pylatexenc ]);
+      pythonEnv = pkgs.python3.withPackages (ps: [ ps.pylatexenc ]);
 
-  compilers = with pkgs; [
-    cargo
-      clang-tools
-      gcc
-  ];
+      compilers = with pkgs; [
+        cargo
+        clang-tools
+        gcc
+      ];
 
-  deps = with pkgs; [
-    curl
-      fd
-      fzf
-      git
-      ripgrep
-      tree-sitter
-      pythonEnv
-  ];
+      deps = with pkgs; [
+        curl
+        fd
+        fzf
+        git
+        glibc
+        ripgrep
+        tree-sitter
+        pythonEnv
+      ];
 
-  lsp = with pkgs; [
-    lua-language-server
-      nil
-      ruff
-      basedpyright
-      yaml-language-server
-  ];
+      lsp = with pkgs; [
+        lua-language-server
+        clang-tools
+        nil
+        ruff
+        basedpyright
+        yaml-language-server
+      ];
 
-  full-deps = compilers ++ deps ++ lsp;
-  bind-path = pkgs.lib.makeBinPath full-deps;
-  in {
-    packages."${system}".default = pkgs.wrapNeovim pkgs.neovim {
-      withPython3 = true;
-      extraPython3Packages = extraPythonPackages;
+      full-deps = compilers ++ deps ++ lsp;
+      bind-path = pkgs.lib.makeBinPath full-deps;
+    in {
+      packages."${system}".default = pkgs.wrapNeovim pkgs.neovim {
+        withPython3 = true;
+        extraPython3Packages = extraPythonPackages;
 
-      configure = {
-        customRC = ''
+        configure = {
+          customRC = ''
           lua << EOF
           local dev_path = os.getenv("NVIM_DEV_PATH")
           local rtp_path = dev_path or "${./.}"
@@ -65,17 +67,17 @@
           dofile(rtp_path .. "/init.lua")
           EOF
           '';
+        };
+
+        extraMakeWrapperArgs = "--prefix PATH : ${bind-path}";
       };
 
-      extraMakeWrapperArgs = "--prefix PATH : ${bind-path}";
-    };
-
-    devShells."${system}".default = pkgs.mkShell {
-      buildInputs = full-deps ++ [ (pkgs.python3.withPackages extraPythonPackages) ];
-      shellHook = ''
+      devShells."${system}".default = pkgs.mkShell {
+        buildInputs = full-deps ++ [ (pkgs.python3.withPackages extraPythonPackages) ];
+        shellHook = ''
         export NVIM_DEV_PATH=$(pwd)
         echo "Neovim Dev Mode Enabled: Using $(pwd) for config"
         '';
+      };
     };
-  };
 }
