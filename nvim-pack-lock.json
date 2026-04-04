@@ -112,6 +112,10 @@
       "rev": "82d01bb71bc051955654b3af68355f783d872fe0",
       "src": "https://github.com/mrjones2014/smart-splits.nvim"
     },
+    "sniprun": {
+      "rev": "973acfe83cff35d13b95369a5606c47565b824fb",
+      "src": "https://github.com/michaelb/sniprun"
+    },
     "statuscol.nvim": {
       "rev": "c46172d0911aa5d49ba5f39f4351d1bb7aa289cc",
       "src": "https://github.com/luukvbaal/statuscol.nvim"

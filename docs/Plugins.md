@@ -64,6 +64,7 @@ vim.pack
 ### Runner
 
 - [overseer.nvim](https://github.com/stevearc/overseer.nvim) - A task runner and job management plugin for Neovim.
+- [sniprun](https://github.com/michaelb/sniprun) - A neovim plugin to run lines/blocs of code (independently of the rest of the file), supporting multiples languages.
 
 ### Treesitter
 
