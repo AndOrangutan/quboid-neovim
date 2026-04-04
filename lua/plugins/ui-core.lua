@@ -73,12 +73,53 @@ return {
         data = {
             lazy = false,
             after = function ()
-                require('mini.notify').setup()
+
+                require('mini.notify').setup({
+                    lsp_progress = { duration_last = 500 },
+                    window = {
+                        max_width_share = 0.5
+                    },
+                    content = {
+                        -- Use notification message as is for LSP progress
+                        format = function(notif)
+                            if notif.data.source == 'lsp_progress' then return notif.msg end
+                            return MiniNotify.default_format(notif)
+                        end,
+
+                        -- Show more recent notifications first
+                        sort = function(notif_arr)
+                            local res, present_msg = {}, {}
+                            for _, notif in ipairs(notif_arr) do
+                                if not present_msg[notif.msg] then
+                                    table.insert(res, notif)
+                                    present_msg[notif.msg] = true
+                                end
+                            end
+
+                            table.sort(
+                                res,
+                                function(a, b) return a.ts_update > b.ts_update end
+                            )
+                            return res
+                        end,
+                    }
+                })
 
                 vim.api.nvim_create_user_command('Messages', function()
                     vim.cmd[[split]]
                     MiniNotify.show_history()
                 end, { desc = 'Show notification history (mini.notify)' })
+
+                local n_progress = 0
+                local lsp_progress_plus = function() n_progress = n_progress + 1 end
+                vim.api.nvim_create_autocmd('LspProgress', { pattern = 'begin', callback = lsp_progress_plus })
+
+                local lsp_progress_minus = function()
+                    vim.defer_fn(function() n_progress = n_progress - 1 end, MiniNotify.config.lsp_progress.duration_last + 1)
+                end
+                vim.api.nvim_create_autocmd('LspProgress', { pattern = 'end', callback = lsp_progress_minus })
+
+                -- The use `n_progress > 0` as a flag to use "LSP window config"
             end,
         },
     },
