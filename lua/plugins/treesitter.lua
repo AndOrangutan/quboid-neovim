@@ -31,6 +31,7 @@ sup.insert('ft-plugin', {
 return {
     {
         src = 'https://github.com/nvim-treesitter/nvim-treesitter',
+        name = 'nvim-treesitter',
         ---@type lze.pack.Spec[]
         data = {
             dep_of = {
@@ -40,7 +41,7 @@ return {
             },
             lazy = false,
             run = function ()
-                vim.cmd[[TSUpdate]]
+                pcall(vim.cmd, 'TSUpdate')
             end,
             cmd = {
                 'TSUpdate',
