@@ -151,32 +151,57 @@ return {
                                     end,
                                 },
                             },
+                            snippets = {
+                                opts = {
+                                    friendly_snippets = true,
+
+                                    -- see the list of frameworks in: https://github.com/rafamadriz/friendly-snippets/tree/main/snippets/frameworks
+                                    -- and search for possible languages in: https://github.com/rafamadriz/friendly-snippets/blob/main/package.json
+                                    -- the following is just an example, you should only enable the frameworks that you use
+                                    -- extended_filetypes = {
+                                    --     markdown = { 'jekyll' },
+                                    --     sh = { 'shelldoc' },
+                                    --     php = { 'phpdoc' },
+                                    --     cpp = { 'unreal' }
+                                    -- }
+                                },
+                            },
                             lazydev = {
                                 name = 'LazyDev',
                                 module = 'lazydev.integrations.blink',
                                 score_offset = 100
                             },
+
                         },
                     },
 
                     -- See the fuzzy documentation for more information
                     fuzzy = { implementation = "prefer_rust_with_warning" },
                 })
-        end,
-    },
-},
-{
-    src = 'https://github.com/xzbdmw/colorful-menu.nvim',
-    ---@type lze.pack.Spec[]
-    data = {
-        dep_of = {
-            'blink.cmp'
+            end,
         },
-        lazy = true,
-        after = function ()
-            require("colorful-menu").setup()
-        end
     },
-},
-
+    {
+        src = 'https://github.com/xzbdmw/colorful-menu.nvim',
+        ---@type lze.pack.Spec[]
+        data = {
+            dep_of = {
+                'blink.cmp'
+            },
+            lazy = true,
+            after = function ()
+                require("colorful-menu").setup()
+            end
+        },
+    },
+    {
+        src = 'https://github.com/rafamadriz/friendly-snippets',
+        ---@type lze.pack.Spec[]
+        data = {
+            dep_of = {
+                'blink.cmp'
+            },
+            lazy = true,
+        },
+    },
 }

@@ -21,6 +21,7 @@ vim.pack
 
 - [blink.cmp](https://github.com/saghen/blink.cmp) - Performant, batteries-included completion plugin for Neovim.
 - [colorful-menu.nvim](https://github.com/xzbdmw/colorful-menu.nvim) - Bring enjoyment to your auto completion.
+- [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) - Set of preconfigured snippets for different languages.
 
 ### Deps
 
