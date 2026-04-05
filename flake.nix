@@ -27,6 +27,7 @@
       compilers = with pkgs; [
         cargo
         clang-tools
+        clang # must come after
         gcc
       ];
 
@@ -43,7 +44,6 @@
 
       lsp = with pkgs; [
         lua-language-server
-        clang-tools
         nil
         ruff
         basedpyright
