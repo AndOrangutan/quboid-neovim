@@ -24,9 +24,10 @@ return {
         src = 'https://github.com/nvim-lua/plenary.nvim',
         ---@type lze.pack.Spec[]
         data = {
-            lazy = true,
+            lazy = false,
             dep_of = {
                 'neogit',
+                'nvim-dap',
                 'todo-comments.nvim',
             },
         },

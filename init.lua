@@ -4,6 +4,7 @@ local sup = require('supporter')
 require('config').init()
 
 sup.init({
+    { 'ft-dap',     'DAP x Filetype',       def.ft_support, {} },
     { 'ft-lsp',     'LSP x Filetype',       def.ft_support, {} },
     { 'ft-plugin',  'Plugins x Filetype',   def.ft_support, {} },
     { 'ft-exclude', 'Exclude x Filetype',   {},             {} },

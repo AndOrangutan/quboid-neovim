@@ -23,6 +23,10 @@ vim.pack
 - [colorful-menu.nvim](https://github.com/xzbdmw/colorful-menu.nvim) - Bring enjoyment to your auto completion.
 - [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) - Set of preconfigured snippets for different languages.
 
+### DAP (Debug Adapter Protocol)
+
+- [nvim-dap](https://codeberg.org/mfussenegger/nvim-dap) - Debug Adapter Protocol client implementation for Neovim.
+
 ### Deps
 
 - [mini.icons](https://github.com/nvim-mini/mini.icons) - Icon provider. Part of 'mini.nvim' library.
@@ -101,7 +105,7 @@ vim.pack
 ## TODO
 
 - https://github.com/marcocofano/excalidraw.nvim
-- https://github.com/mfussenegger/nvim-dap
+- https://codeberg.org/mfussenegger/nvim-dap-python
 - https://github.com/igorlfs/nvim-dap-view
 - https://github.com/nvim-neotest/neotest
 - https://github.com/stevearc/overseer.nvim

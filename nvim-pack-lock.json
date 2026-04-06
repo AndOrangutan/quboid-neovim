@@ -68,6 +68,10 @@
       "rev": "d3890fc3cdf0859845a86b2be306bba01458df1a",
       "src": "https://github.com/NeogitOrg/neogit"
     },
+    "nvim-dap": {
+      "rev": "4f5deb110d9ff8994d96c21df95e2271d11214f9",
+      "src": "https://codeberg.org/mfussenegger/nvim-dap"
+    },
     "nvim-lspconfig": {
       "rev": "dd261ad5266ab5bbec249d21efeceda98ff3e1a6",
       "src": "https://github.com/neovim/nvim-lspconfig"
