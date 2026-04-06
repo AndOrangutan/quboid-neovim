@@ -31,6 +31,15 @@
         gcc
       ];
 
+      codelldb = pkgs.writeShellScriptBin "codelldb" ''
+        EXT_PATH="${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb"
+        exec "$EXT_PATH/adapter/codelldb" "--liblldb" "$EXT_PATH/lldb/lib/liblldb.so" "$@"
+      '';
+
+      dap = with pkgs; [
+        codelldb
+      ];
+
       deps = with pkgs; [
         curl
         fd
@@ -50,7 +59,7 @@
         yaml-language-server
       ];
 
-      full-deps = compilers ++ deps ++ lsp;
+      full-deps = compilers ++ dap ++ deps ++ lsp;
       bind-path = pkgs.lib.makeBinPath full-deps;
     in {
       packages."${system}".default = pkgs.wrapNeovim pkgs.neovim {
