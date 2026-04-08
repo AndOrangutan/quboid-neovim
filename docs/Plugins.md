@@ -12,7 +12,6 @@ vim.pack
 
 - [mini-animate](https://github.com/nvim-mini/mini.animate) - Neovim Lua plugin to animate common Neovim actions. Part of 'mini.nvim' library.
 
-
 ### Colorschemes
 
 - [onedark.nvim](https://github.com/navarasu/onedark.nvim) - One dark and light colorscheme for neovim >= 0.5.0 written in lua based on Atom's One Dark and Light theme.
@@ -26,6 +25,7 @@ vim.pack
 ### DAP (Debug Adapter Protocol)
 
 - [nvim-dap](https://codeberg.org/mfussenegger/nvim-dap) - Debug Adapter Protocol client implementation for Neovim.
+- [nvim-dap-view](https://github.com/igorlfs/nvim-dap-view) - Visualize debugging sessions in neovim.
 
 ### Deps
 
@@ -106,7 +106,6 @@ vim.pack
 
 - https://github.com/marcocofano/excalidraw.nvim
 - https://codeberg.org/mfussenegger/nvim-dap-python
-- https://github.com/igorlfs/nvim-dap-view
 - https://github.com/nvim-neotest/neotest
 - https://github.com/stevearc/overseer.nvim
 - https://github.com/stevearc/resession.nvim

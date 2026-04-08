@@ -9,10 +9,13 @@ local dap_support = require('supporter').by('ft-dap')
 return {
     {
         src = 'https://codeberg.org/mfussenegger/nvim-dap',
-        name = 'nvim-dap',
+        name = 'dap',
         ---@type lze.pack.Spec[]
         data = {
             lazy = true,
+            dep_of = {
+                'dap',
+            },
             ft = dap_support,
             cmd = {
                 'DapContinue',
@@ -58,5 +61,25 @@ return {
                 { lhs = '<leader>dt', rhs = function() require('dap').terminate() end, desc = 'Terminate (dap)' },
             },
         },
+    },
+    {
+        src = 'https://github.com/igorlfs/nvim-dap-view',
+        ---@type lze.pack.Spec[]
+        data = {
+            name = 'dap-view',
+            lazy = true,
+            dep_of = {
+            },
+            cmd = {
+                'DapViewOpen',
+                'DapViewClose',
+            },
+            after = function()
+                ---@module 'dap-view'
+                ---@type dapview.Config
+                require('dap-view').setup()
+            end,
+        },
+
     },
 }

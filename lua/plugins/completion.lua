@@ -28,6 +28,7 @@ return {
             event = {'BufReadPost', 'BufNewFile', 'BufWritePre'},
             dep_of = {
                 'lspconfig',
+                'nvim-dap',
                 'obsidian.nvim',
                 'otter.nvim',
             },

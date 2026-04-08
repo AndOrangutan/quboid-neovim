@@ -28,6 +28,8 @@ return {
             dep_of = {
                 'neogit',
                 'nvim-dap',
+                'blink.cmp',
+                'dap',
                 'todo-comments.nvim',
             },
         },
