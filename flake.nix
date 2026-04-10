@@ -46,9 +46,10 @@
         fzf
         git
         glibc
+        pythonEnv
         ripgrep
         tree-sitter
-        pythonEnv
+        wordnet
       ];
 
       lsp = with pkgs; [
