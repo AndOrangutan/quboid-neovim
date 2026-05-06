@@ -63,6 +63,8 @@ vim.pack
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Quickstart configs for Nvim LSP.
 - [tiny-inline-diagnostic.nvim](https://github.com/rachartier/tiny-inline-diagnostic.nvim) - A Neovim plugin for displaying inline diagnostic messages with customizable styles and icons.
 
+- [mini.jump](https://github.com/nvim-mini/mini.jump) - Neovim Lua plugin to jump forward/backward to a single character. Part of 'mini.nvim' library.
+
 ### Picker
 
 - [fzf-lua](https://github.com/ibhagwan/fzf-lua) - Improved fzf.vim written in lua.
