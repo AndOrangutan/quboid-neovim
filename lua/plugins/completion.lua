@@ -131,10 +131,30 @@ return {
                     -- Default list of enabled providers defined so that you can extend it
                     -- elsewhere in your config, without redefining it, due to `opts_extend`
                     sources = {
-                        default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+                        default = function ()
+                            local def = { 'lsp', 'path', 'snippets', 'buffer' }
+                            local def_text = { 'lsp', 'path', 'snippets', 'dictionary', 'buffer' }
+
+                            local cursor = vim.api.nvim_win_get_cursor(0)
+                            local col = cursor[2]
+                            if vim.api.nvim_get_mode().mode:sub(1, 1) == 'i' and col > 0 then col = col - 1 end
+                            local success, node = pcall(vim.treesitter.get_node, { pos = { cursor[1] - 1, col } })
+
+                            if success and node and vim.tbl_contains({ 'comment', 'comment_content', 'line_comment', 'block_comment' }, node:type()) then
+                                return def_text
+                            elseif vim.bo.filetype == 'markdown' then
+                                return { 'lsp', 'path', 'snippets', 'thesaurus', 'buffer' }
+                            elseif vim.bo.filetype == 'lua' then
+                                return { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' }
+                            else
+                                return def
+                            end
+                        end,
                         providers = {
                             buffer = {
                                 opts = {
+
+                                    -- TODO: This comment isn't displaying the dictionary completion PLEASE FIX
                                     -- get all buffers, even ones like neo-tree
                                     get_bufnrs = vim.api.nvim_list_bufs
                                 }
@@ -159,12 +179,12 @@ return {
                                     -- see the list of frameworks in: https://github.com/rafamadriz/friendly-snippets/tree/main/snippets/frameworks
                                     -- and search for possible languages in: https://github.com/rafamadriz/friendly-snippets/blob/main/package.json
                                     -- the following is just an example, you should only enable the frameworks that you use
-                                    -- extended_filetypes = {
-                                    --     markdown = { 'jekyll' },
-                                    --     sh = { 'shelldoc' },
-                                    --     php = { 'phpdoc' },
-                                    --     cpp = { 'unreal' }
-                                    -- }
+                                    extended_filetypes = {
+                                        markdown = { 'all' },
+                                        -- sh = { 'shelldoc' },
+                                        -- php = { 'phpdoc' },
+                                        -- cpp = { 'unreal' }
+                                    }
                                 },
                             },
                             lazydev = {
@@ -201,7 +221,7 @@ return {
 
                             -- Use the dictionary source
                             dictionary = {
-                                name = 'dictoinary',
+                                name = 'dictionary',
                                 module = 'blink-cmp-words.dictionary',
                                 -- All available options
                                 opts = {
@@ -216,10 +236,6 @@ return {
                                     definition_pointers = { '!', '&', '^' },
                                 },
                             },
-                        },
-                        per_filetype = {
-                            text = { 'dictionary' },
-                            markdown = { 'thesaurus' },
                         },
                     },
 

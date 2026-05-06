@@ -75,3 +75,7 @@ vim.opt.pumheight = 16
 vim.opt.laststatus = 3
 
 vim.opt.cmdheight = 0
+
+vim.opt.scrolloffpad = 1
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8

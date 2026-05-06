@@ -35,9 +35,10 @@ return {
         ---@type lze.pack.Spec[]
         data = {
             dep_of = {
+                'blink.cmp',
                 'otter.nvim',
-                'trouble.nvim',
                 'render-markdown.nvim',
+                'trouble.nvim',
             },
             lazy = false,
             run = function ()
