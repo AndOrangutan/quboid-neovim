@@ -40,18 +40,12 @@ return {
 
                 -- Use the Nix command which is safer on NixOS
                 -- 'data.path' is provided by the PackChanged event
-                local obj = vim.system({ 'nix', 'run', '.#build-plugin' }, { cwd = data.path }):wait()
+                -- local obj = vim.system({ 'nix', 'run', '.#build-plugin' }, { cwd = data.path }):wait()
                 -- local obj = vim.system({'cargo build --release' }, { cwd = data.path }):wait()
-
-
                 vim.schedule(function()
-                    if obj.code == 0 then
-                        vim.notify('Blink.cmp built successfully!', vim.log.levels.INFO)
-                    else
-                        vim.notify('Blink.cmp build failed!', vim.log.levels.ERROR)
-                        print(obj.stderr) -- Check :messages for errors
-                    end
+                    require('blink.cmp').build():wait(60000)
                 end)
+
             end,
             after = function()
                 require('blink.cmp').setup({
@@ -243,6 +237,16 @@ return {
                     fuzzy = { implementation = 'prefer_rust_with_warning' },
                 })
             end,
+        },
+    },
+    {
+        src = 'https://github.com/saghen/blink.lib',
+        ---@type lze.pack.Spec[]
+        data = {
+            dep_of = {
+                'blink.cmp'
+            },
+            lazy = true,
         },
     },
     {
