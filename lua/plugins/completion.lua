@@ -42,9 +42,7 @@ return {
                 -- 'data.path' is provided by the PackChanged event
                 -- local obj = vim.system({ 'nix', 'run', '.#build-plugin' }, { cwd = data.path }):wait()
                 -- local obj = vim.system({'cargo build --release' }, { cwd = data.path }):wait()
-                vim.schedule(function()
-                    require('blink.cmp').build():wait(60000)
-                end)
+                require('blink.cmp').build():wait(60000)
 
             end,
             after = function()

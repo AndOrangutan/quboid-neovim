@@ -80,6 +80,9 @@ return  {
                 require('obsidian').setup({
                     legacy_commands = false,
 
+                    attachments = {
+                        folder = 'assets/imgs'
+                    },
                     completion = {
                         min_chars = 1,
                     },
