@@ -4,7 +4,7 @@
 
 vim.pack
 
-- [lze](https://github.com/BirdeeHub/lze) - A lazy-loading library for neovim, inspired by, but different from, nvim-neorocks/lz.n
+- [zpack](https://github.com/zuqini/zpack.nvim) - Thin layer over native 'vim.pack`, adding support for lazy-loading and lazy.nvim specs.
 
 ## Installed
 
