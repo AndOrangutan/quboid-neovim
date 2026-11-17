@@ -71,11 +71,10 @@
         configure = {
           customRC = ''
           lua << EOF
-          local dev_path = os.getenv("NVIM_DEV_PATH")
-          local rtp_path = dev_path or "${./.}"
-          vim.opt.rtp:prepend(rtp_path)
-          vim.opt.rtp:append(rtp_path .. "/after")
-          dofile(rtp_path .. "/init.lua")
+          local cfg = vim.fn.stdpath('config')  -- ~/.config/nvim
+          vim.opt.rtp:prepend(cfg)
+          vim.opt.rtp:append(cfg .. '/after')
+          dofile(cfg .. '/init.lua')
           EOF
           '';
         };
